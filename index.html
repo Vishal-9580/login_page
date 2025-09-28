@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Registration</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #f9f9f9;
+      padding: 20px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 700px;
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    label {
+      font-weight: bold;
+      color: #444;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="password"] {
+      padding: 10px;
+      width: 100%;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      background: #f5f5f5;
+    }
+
+    .radio-group, .checkbox-group {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .btn {
+      padding: 12px;
+      background: rgb(82, 82, 255);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: rgb(50, 50, 200);
+    }
+
+    @media (max-width: 500px) {
+      .container {
+        padding: 20px;
+      }
+      .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- action register.php file को call करेगा -->
+    <form method="POST" action="register.php">
+      <h1>Student Registration</h1>
+
+      <div class="form-group">
+        <label for="name">Student Name :</label>
+        <input type="text" id="name" placeholder="Student Name" name="name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="fname">Father's Name :</label>
+        <input type="text" id="fname" placeholder="Father's Name" name="fname" required>
+      </div>
+
+      <div class="form-group">
+        <label>Gender :</label>
+        <div class="radio-group">
+          <label><input type="radio" name="gender" value="male" required> Male</label>
+          <label><input type="radio" name="gender" value="female"> Female</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="mobile">Mobile No. :</label>
+        <input type="tel" id="mobile" placeholder="Mobile No." name="mobile" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email ID :</label>
+        <input type="email" id="email" placeholder="Email ID" name="email" required>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password :</label>
+        <input type="password" id="password" placeholder="Password" name="password" required>
+      </div>
+
+      <div class="form-group">
+        <label for="cpassword">Confirm Password :</label>
+        <input type="password" id="cpassword" placeholder="Confirm Password" required>
+      </div>
+
+      <div class="form-group">
+        <label>Hobbies :</label>
+        <div class="checkbox-group">
+          <label><input type="checkbox" name="hobby[]" value="movies"> Movies</label>
+          <label><input type="checkbox" name="hobby[]" value="music"> Listening Music</label>
+          <label><input type="checkbox" name="hobby[]" value="gardening"> Gardening</label>
+        </div>
+      </div>
+
+      <input type="submit" value="Submit" class="btn">
+    </form>
+  </div>
+</body>
+</html>
